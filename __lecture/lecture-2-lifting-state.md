@@ -29,7 +29,7 @@ const App = () => {
 };
 
 const Header = () => {
-  const [searchTerm, setSearchTerm] = React.useState('');
+  const [searchTerm, setSearchTerm] = React.useState("");
 
   return (
     <header>
@@ -59,17 +59,16 @@ Solve me:
 
 ```js
 const App = () => {
+  const [searchTerm, setSearchTerm] = React.useState("");
   return (
     <>
-      <Header />
+      <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <MainContent />
     </>
   );
 };
 
 const Header = () => {
-  const [searchTerm, setSearchTerm] = React.useState('');
-
   return (
     <header>
       <Logo />
@@ -90,7 +89,7 @@ const MainContent = () => {
 
 ---
 
-<!-- 
+<!--
 # Exercise
 
 Lift state up
@@ -195,7 +194,7 @@ const SearchResults = () => {
     />
   ))
 }
-``` 
+```
 
 ---
 -->
