@@ -103,7 +103,7 @@ The following components are blurry in terms of their abstraction. Let's address
 
 ```js
 const Banner = ({ type, message, user }) => {
-  const bg = type === 'success' ? 'green' : 'red';
+  const bg = type === "success" ? "green" : "red";
 
   // Only logged in users are allowed to see the banner
   if (!user) {
@@ -122,7 +122,7 @@ const Banner = ({ type, message, user }) => {
 
 ```js
 const ContactPage = () => {
-  const [message, setMessage] = React.useState('');
+  const [message, setMessage] = React.useState("");
   const [messageError, setMessageError] = React.useState(false);
 
   return (
@@ -158,7 +158,52 @@ const ContactPage = () => {
 };
 ```
 
----
+const textArea = () => {
+const [message, setMessage] = React.useState('');
+const [messageError, setMessageError] = React.useState(false);
+}
+
+const ContactPage = () => {
+
+return (
+  
+ <label>
+Message:
+<textarea
+value={message}
+onChange={ev => {
+setMessage(ev.target.value);
+
+            if (ev.target.value.length < 100) {
+              setMessageError(true);
+            } else {
+              setMessageError(false);
+            }
+          }}
+        />
+      </label>
+      {messageError && (
+        <p className="error">Please enter at least 100 characters.</p>
+      )}
+    <>
+
+);
+};
+
+return (
+
+<div>
+      <Header />
+
+      <h1>Contact Us</h1>
+      <p>
+        We're looking forward to hearing from you. Please fill in this contact
+        form:
+      </p>
+
+      textArea();
+
+## )
 
 [Next lecture: Lifting State Up](../lecture-4-lifting-state-up)
 

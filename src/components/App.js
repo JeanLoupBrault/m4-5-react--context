@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import GlobalStyles from './GlobalStyles';
 import Home from './Home';
 import Game from './Game';
+import items from '../data';
 
 function App(props) {
   return (
@@ -13,7 +14,7 @@ function App(props) {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/game">
+        <Route path="/game" items={items}>
           <Game />
         </Route>
       </Router>
